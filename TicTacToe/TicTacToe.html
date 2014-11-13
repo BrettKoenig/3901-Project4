@@ -1,0 +1,386 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <!--link to css sheet-->
+        <link rel="stylesheet" type="text/css" href="TicTacToe.css"/>
+        <script type="text/javascript">
+        //initialize needed variables
+        var count = 0;
+        var turn = 0;
+        var squareFilled;
+        var whichSquare;
+        var c;
+        var gameOver;
+        var OneUser;
+        window.onload=function(){
+            //Enable user to choose to play against computer or other human
+            var numOfUsers = window.prompt("Would you like to play one player or two player mode? Enter 'one' or 'two', however program will default to one player.", "one");
+            if(numOfUsers == "two")
+            {
+                OneUser = false;
+            }
+            else
+            {
+                OneUser = true;
+            }
+        	squareFilled = new Array();
+            //squareFilled is an array with a 0 if the square hasn't been chosen yet, 1 if the square has been chose by the user, 2 if the square has been chose by the computer
+        	while(count < 9)
+        	{
+        		//initialize entire array to zero when window first loads
+        		squareFilled[count]=0;
+        		count++;
+        	}
+        	count = 0;
+            gameOver=false;
+            if(turn == 0 && !OneUser)
+            {
+                window.alert("It is player one's turn!")
+            }
+        }
+        function checkWinner(squareFilled,turn)
+        {
+        	//check all winning combinations for equality
+            if(turn >= 2)
+            {
+        	   if((squareFilled[0]!=0) &&(squareFilled[0]==squareFilled[1])&&(squareFilled[1]==squareFilled[2]))
+        	   {
+        		  if(squareFilled[0]==1)
+        		  {
+                    if(OneUser)
+                    {
+            			window.alert("You won!");
+                    }
+                    else
+                    {
+                        window.alert("Player One won!")
+                    }
+                    gameOver=true;
+        		}
+        		else
+        		{
+                    if(OneUser)
+                    {
+                        window.alert("You lost...");
+                    }
+                    else
+                    {
+                        window.alert("Player Two won!");
+                    }
+                    gameOver=true;
+        		}
+                playAgain();
+        	}
+        	else if((squareFilled[3]!=0)&&(squareFilled[3]==squareFilled[4])&&(squareFilled[4]==squareFilled[5]))
+        	{
+        		if(squareFilled[3]==1)
+        		{
+        			if(OneUser)
+                    {
+                        window.alert("You won!");
+                    }
+                    else
+                    {
+                        window.alert("Player One won!")
+                    }
+                    gameOver=true;
+        		}
+        		else
+        		{
+                    if(OneUser)
+                    {
+                        window.alert("You lost...");
+                    }
+                    else
+                    {
+                        window.alert("Player Two won!");
+                    }
+                    gameOver=true;
+        		}
+                playAgain();
+        	}
+        	else if((squareFilled[6]!=0)&&(squareFilled[6]==squareFilled[7])&&(squareFilled[7]==squareFilled[8]))
+        	{
+        		if(squareFilled[6]==1)
+        		{
+        			if(OneUser)
+                    {
+                        window.alert("You won!");
+                    }
+                    else
+                    {
+                        window.alert("Player One won!")
+                    }
+                    gameOver=true;
+        		}
+        		else
+        		{
+                    if(OneUser)
+                    {
+                        window.alert("You lost...");
+                    }
+                    else
+                    {
+                        window.alert("Player Two won!");
+                    }
+                    gameOver=true;
+        		}
+                playAgain();
+        	}
+        	else if((squareFilled[0]!=0)&&(squareFilled[0]==squareFilled[3])&&(squareFilled[3]==squareFilled[6]))
+        	{
+        		if(squareFilled[0]==1)
+        		{
+        			if(OneUser)
+                    {
+                        window.alert("You won!");
+                    }
+                    else
+                    {
+                        window.alert("Player One won!")
+                    }
+                    gameOver=true;
+        		}
+        		else
+        		{
+                    if(OneUser)
+                    {
+                        window.alert("You lost...");
+                    }
+                    else
+                    {
+                        window.alert("Player Two won!");
+                    }
+                    gameOver=true;
+        		}
+                playAgain();
+        	}
+        	else if((squareFilled[1]!=0)&&(squareFilled[1]==squareFilled[4])&&(squareFilled[4]==squareFilled[7]))
+        	{
+        		if(squareFilled[1]==1)
+        		{
+        			if(OneUser)
+                    {
+                        window.alert("You won!");
+                    }
+                    else
+                    {
+                        window.alert("Player One won!")
+                    }
+                    gameOver=true;
+        		}
+        		else
+                {
+                    if(OneUser)
+                    {
+                        window.alert("You lost...");
+                    }
+                    else
+                    {
+                        window.alert("Player Two won!");
+                    }
+                    gameOver=true;
+        		}
+                playAgain();
+        	}
+        	else if((squareFilled[2]!=0)&&(squareFilled[2]==squareFilled[5])&&(squareFilled[5]==squareFilled[8]))
+        	{
+        		if(squareFilled[2]==1)
+        		{
+        			if(OneUser)
+                    {
+                        window.alert("You won!");
+                    }
+                    else
+                    {
+                        window.alert("Player One won!")
+                    }
+                    gameOver=true;
+        		}
+        		else
+        		{
+                    if(OneUser)
+                    {
+                        window.alert("You lost...");
+                    }
+                    else
+                    {
+                        window.alert("Player Two won!");
+                    }
+                    gameOver=true;
+        		}
+                playAgain();
+        	}
+        	else if((squareFilled[0]!=0)&&(squareFilled[0]==squareFilled[4])&&(squareFilled[4]==squareFilled[8]))
+        	{
+        		if(squareFilled[0]==1)
+        		{
+                    if(OneUser)
+                    {
+                        window.alert("You won!");
+                    }
+                    else
+                    {
+                        window.alert("Player One won!")
+                    }
+                    gameOver=true;
+        		}
+        		else
+        		{
+                    if(OneUser)
+                    {
+                        window.alert("You lost...");
+                    }
+                    else
+                    {
+                        window.alert("Player Two won!");
+                    }
+                    gameOver=true;
+        		}
+                playAgain();
+        	}
+        	else if((squareFilled[2]!=0)&&(squareFilled[2]==squareFilled[4])&&(squareFilled[4]==squareFilled[6]))
+        	{
+        		if(squareFilled[2]==1)
+        		{
+                    if(OneUser)
+                    {
+                        window.alert("You won!");
+                    }
+                    else
+                    {
+                        window.alert("Player One won!")
+                    }
+                    gameOver=true;
+        		}
+        		else
+        		{
+                    if(OneUser)
+                    {
+                        window.alert("You lost...");
+                    }
+                    else
+                    {
+                        window.alert("Player Two won!");
+                    }
+                    gameOver=true;
+        		}
+                playAgain();
+        	}
+        	else if (turn>=8)
+        	{
+        		window.alert("Cats Game");
+                gameOver=true;
+                playAgain();
+        	}
+        }
+        }
+        function squareChosen(square)
+        {
+            //Determine what square was chosen and by whom
+            if(squareFilled[square]!=0)
+            {
+                alert("This square has already been chosen, please choose a different square.")
+            }
+            else{
+                //how to mark board if one player vs computer
+                if(OneUser)
+                {
+                    //find which square was clicked and mark it
+                    whichSquare = "square"+square;
+                    document.getElementById(whichSquare).innerHTML="<b style=\"font-size:32pt; color:#B22222;\">X</b>";
+                    turn++;
+                    //put one in array to determine who square belongs to
+                    squareFilled[square]=1;
+                    //see if previous move caused a winner
+                    checkWinner(squareFilled,turn);
+                    //this if statement is to improve computer's ability
+                    if(!gameOver)
+                    {
+                        if(squareFilled[0]==0)
+                        {
+                            count=0;
+                        }
+                        else if(squareFilled[8]==0)
+                        {
+                            count=8;
+                        }
+                        else
+                        {
+                            //if computer doesnt choose top left or bottom right square it chooses remaining empty squares psuedo-randomly
+                            count = Math.floor((Math.random()*8)+1)
+                            while(squareFilled[count]!=0)
+                            {
+                                count++;
+                            }
+                        }
+                        whichSquare = "square"+count;
+                        document.getElementById(whichSquare).innerHTML="<b style=\"font-size:32pt;\">O</b>";
+                        squareFilled[count]=2;
+                        checkWinner(squareFilled,turn);
+                        turn++;
+                        count=0;
+                    }
+                }
+                //how to mark board if two players
+                else
+                {
+                    //determine which square was chosen and whose turn it was
+                    whichSquare = "square"+square;
+                    if(turn%2 == 0)
+                    {
+                        document.getElementById(whichSquare).innerHTML="<b style=\"font-size:32pt; color:#B22222;\">X</b>";
+                        squareFilled[square]=1;
+                    }
+                    else
+                    {
+                        document.getElementById(whichSquare).innerHTML="<b style=\"font-size:32pt;\">O</b>";
+                        squareFilled[square]=2;
+                    }
+                    turn++;
+                    if(turn == 1)
+                    {
+                        window.alert("It is player two's turn! Please alternate in this fashion for remainder of game.")
+                    }
+                    checkWinner(squareFilled,turn);
+                    count = 0;
+                }
+            }
+        }
+        //run this function at the end to clear board if user wishes to play again
+        function playAgain(){
+            answer=confirm("Would you like to play again?");
+            if(answer==true){
+                alert("Okay, we will reset the board for you.");
+                location.reload(true);
+            }
+            else{
+                alert("Thanks for playing!");
+        }
+        }
+        </script>
+    </head>
+    <!--set up tic tac toe board with html-->
+    <body>
+        <div class="full">
+    	<h1>Tic Tac Toe Board</h1>
+    	<table>
+	    	<tr>
+	    		<td class="boxOnBoard" id="square0" onclick="squareChosen(0)"></td>
+	    		<td class="boxOnBoard" id="square1" onclick="squareChosen(1)"></td>
+	    		<td class="boxOnBoard" id="square2" onclick="squareChosen(2)"></td>
+	    	</tr>
+	    	<tr>
+	    		<td class="boxOnBoard" id="square3" onclick="squareChosen(3)"></td>
+	    		<td class="boxOnBoard" id="square4" onclick="squareChosen(4)"></td>
+	    		<td class="boxOnBoard" id="square5" onclick="squareChosen(5)"></td>
+	    	</tr>
+	    	<tr>
+	    		<td class="boxOnBoard" id="square6" onclick="squareChosen(6)"></td>
+	    		<td class="boxOnBoard" id="square7" onclick="squareChosen(7)"></td>
+	    		<td class="boxOnBoard" id="square8" onclick="squareChosen(8)"></td>
+	    	</tr>
+  		</table>
+    </div>ß
+    </body>
+</html>

@@ -1,0 +1,156 @@
+<!-- HTML page for classic calculator by A-Team!
+ -->
+<html>
+<head>
+	<title>CSE 3901 Project 4: Caclulator from scratch</title>
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" type="text/css" href="calc.css"/>
+	<!-- Javascript for classic calculator by A-Team!
+ 	-->
+	<script type="text/javascript">
+		// functiont to get the value of a button and concat with value on screen
+		function getVal(val){
+			document.getElementById("disp").value += val;
+		}
+		// functiont to write the value of a button to display
+		function writeDisp(val){
+			document.getElementById("disp").value = val;
+		}
+		//function to evaluate the expression on the display
+		function eV(){
+			try{
+				writeDisp(eval(document.getElementById("disp").value));
+			}catch (eV){
+				writeDisp('error');
+			}
+		}
+		//global var memory and number
+		var mem;
+		var num;
+
+		//function to evaluate memory operations
+		function memory(val){
+			switch(val){
+				//clear memory
+				case 'MC':
+					mem = "0";
+					break;
+				//return what's in memeory to display
+				case 'MR':
+					writeDisp(mem);
+					break;
+				//store what's on dislpay in memory
+				case 'MS':
+					mem = document.getElementById("disp").value;
+					writeDisp("");
+					break;
+				//subtract what's on display from what's in memory
+				case 'Mm':
+					num = document.getElementById("disp").value;
+					mem = eval(mem +"-"+ num);
+					break;
+				//add what's on display with what's in memory
+				case 'Mp':
+					num = document.getElementById("disp").value;
+					mem = eval(mem +"+"+ num);
+					break;
+			}
+		}
+	</script>
+</head>
+<body>
+<h1>Classic Calculator</h1>	
+	<div class="outer center">
+		<div class="display center">
+			 <input type="text" id="disp" />
+		</div>
+		<table>
+			<tr>
+				<td>
+					<button onclick='memory("MC")'>MC</button>
+				</td>
+				<td>
+					<button onclick='memory("MR")'>MR</button>
+				</td>
+				<td>
+					<button onclick='memory("Mm")'>M-</button>
+				</td>
+				<td>
+					<button onclick='memory("Mp")'>M+</button>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<button onclick='memory("MS")'>MS</button>
+				</td>
+				<td>
+					<button onclick='getVal("(")'>(</button>
+				</td>
+				<td>
+					<button onclick='getVal(")")'>)</button>
+				</td>
+				<td>
+					<button onclick='getVal("/")'>/</button>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<button onclick='getVal("7")'>7</button>
+				</td>
+				<td>
+					<button onclick='getVal("8")'>8</button>
+				</td>
+				<td>
+					<button onclick='getVal("9")'>9</button>
+				</td>
+				<td>
+					<button onclick='getVal("*")'>*</button>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<button onclick='getVal("4")'>4</button>
+				</td>
+				<td>
+					<button onclick='getVal("5")'>5</button>
+				</td>
+				<td>
+					<button onclick='getVal("6")'>6</button>
+				</td>
+				<td>
+					<button onclick='getVal("-")'>-</button>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<button onclick='getVal("1")'>1</button>
+				</td>
+				<td>
+					<button onclick='getVal("2")'>2</button>
+				</td>
+				<td>
+					<button onclick='getVal("3")'>3</button>
+				</td>
+				<td>
+					<button onclick='getVal("+")'>+</button>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<button onclick='getVal("0")'>0</button>
+				</td>
+				<td>
+					<button onclick='getVal(".")'>.</button>
+				</td>
+				<td>
+					<button onclick='writeDisp("")'>C</button>
+				</td>
+				<td>
+					<button onclick='eV()'>ENTER</button>
+				</td>
+			</tr>
+		</table>
+		<p>By the A-Team!</p>
+	</div>
+</body>
+</html>

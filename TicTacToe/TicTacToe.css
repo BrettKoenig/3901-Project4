@@ -1,0 +1,42 @@
+
+/*General css file for tic tac toe board*/
+body{
+	height:100%;
+	margin:0;
+	padding-top:0;
+	text-align:center;
+	color:white;
+}
+.full{
+    display:block
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    position:absolute;
+    /*all background image tags implement a gray gradient, need all for different browsers so it appears the same*/
+		background-image: -ms-linear-gradient(bottom right, #FFFFFF 0%, #333133 100%); 
+		background-image: -moz-linear-gradient(bottom right, #FFFFFF 0%, #333133 100%);
+		background-image: -o-linear-gradient(bottom right, #FFFFFF 0%, #333133 100%);
+		background-image: -webkit-gradient(linear, right bottom, left top, color-stop(0, #FFFFFF), color-stop(1, #333133));
+		background-image: -webkit-linear-gradient(bottom right, #FFFFFF 0%, #333133 100%);
+		background-image: linear-gradient(to top left, #FFFFFF 0%, #333133 100%);
+		/*make gradient fill the entire page without repeating*/
+		background-size:100%;
+		background-repeat:no-repeat;
+}
+h1{
+	font-family: "Courier New";
+	/*color:#B22222;*/
+}
+table{
+	margin:auto;
+}
+td{
+	border:3px solid;
+	border-color:white;
+}
+.boxOnBoard{
+	width:75px;
+	height:75px;
+}

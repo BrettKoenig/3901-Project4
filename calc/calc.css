@@ -1,0 +1,70 @@
+/*CSS stylesheet for classic calculator by A-Team!
+*/
+
+body{
+	padding-top:50px; 
+	} /* centering calc in body*/
+
+/*div{
+	width: 400px;
+	height: 400px;
+	background-color: red;
+
+}*/
+
+.display {
+    width:220px;
+    top:20px;
+    height:40px;
+}
+.display input {
+    position:relative;
+    top:2px;
+    height:35px;
+    background-color:#bccd95;
+    font-size:21px;
+    text-align:right;
+    border: solid;
+}
+
+/*.display{
+	width: 150px;
+	height: 40px;
+	background: white;
+}
+*/
+.center
+{
+margin-left:auto;
+margin-right:auto;
+}
+
+.outer {
+	width:250px;
+	height: 330px;
+	background: gray;
+	border: 15px 15px;
+	border: solid;
+	padding-top: 20px;
+} /* styling for calc */
+
+table{
+	padding-top: 30px;
+	text-align: center;
+	margin-left:auto;
+	margin-right:auto;
+	width: 200px;
+}
+
+td{
+	text-align: center;
+}
+
+h1,p{
+	text-align: center;
+}
+
+button{
+	width: 50px;
+	height: 30px;
+}

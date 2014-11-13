@@ -1,0 +1,56 @@
+//Current date, with time set to 00:00:00
+current = new Date();
+//init(4, 5, 3, 2);
+current.setHours(0);
+current.setMinutes(0);
+current.setSeconds(0);
+current.setMilliseconds(0);
+
+//Create an array of the dates of all rows in each table
+function dateArray(id){
+table = document.getElementById(id);
+dates = new Array(table.rows.length);
+//skip the first row (just the heading)
+for(var c = 1, row; row = table.rows[c]; c++){
+    //document.write(row.cells[2].innerHTML);
+    dates[c] = new Date(row.cells[2].innerHTML+" 2014");
+    }
+    return dates;
+}
+
+function print(array){
+    document.write("</br></br></br></br>");
+    for(var count = 1; count < dates.length; count++){
+    document.write(array[count]+"</br>");
+    }
+}
+
+//Display 'relevant' data (time hasn't passed)
+function relevant(id){
+current = new Date();
+current.setHours(0);
+current.setMinutes(0);
+current.setSeconds(0);
+current.setMilliseconds(0);
+    
+    document.write(current+ "</br></br>");
+var dates = dateArray(id);
+    print(dates);
+    temp = dates;
+    //document.write("</br></br>dates.length= "+dates.length);
+    for(var count = 1; count < dates.length; count++){
+            document.write("</br></br>" + count + " the date is "+ dates[count]);
+            if(current > dates[count]){
+                //delete row with index index[count]
+                table.deleteRow(count);
+                temp[count] = new Date(0);
+                }
+
+                //print(temp);
+                
+                }
+            print(dates);
+    
+                
+    
+            }
